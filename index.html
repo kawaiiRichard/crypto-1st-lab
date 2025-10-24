@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1 лаба</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>1 лаба</h1>
+        <p>Шифрование изображений: потоковый и перестановочный методы</p>
+      </header>
+
+      <div class="controls">
+        <div class="control-group">
+          <label for="imageInput">Выберите изображение:</label>
+          <input type="file" id="imageInput" accept="image/*" />
+        </div>
+
+        <div class="control-group">
+          <label for="algorithm">Алгоритм:</label>
+          <select id="algorithm">
+            <option value="stream">Потоковый (XOR)</option>
+            <option value="permutation">Перестановочный</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="key">Ключ:</label>
+          <input
+            type="text"
+            id="key"
+            placeholder="Введите секретный ключ"
+            value="mySecretKey123"
+          />
+        </div>
+
+        <div class="control-group">
+          <label for="iterations">Итерации (для перестановки):</label>
+          <input type="number" id="iterations" value="10" min="1" max="100" />
+        </div>
+
+        <div class="buttons">
+          <button id="encryptBtn">Зашифровать</button>
+          <button id="decryptBtn">Расшифровать</button>
+          <button id="analyzeBtn">Анализ метрик</button>
+          <button id="sensitivityBtn">Чувствительность к ключу</button>
+        </div>
+      </div>
+
+      <div class="image-comparison">
+        <div class="image-container">
+          <h3>Исходное изображение</h3>
+          <canvas id="originalCanvas"></canvas>
+          <div id="originalInfo"></div>
+        </div>
+        <div class="image-container">
+          <h3>Результат</h3>
+          <canvas id="resultCanvas"></canvas>
+          <div id="resultInfo"></div>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <h3>Метрики шифрования</h3>
+        <div id="metricsResults"></div>
+      </div>
+
+      <div class="histograms">
+        <div class="histogram-container">
+          <h4>Гистограмма исходного</h4>
+          <canvas id="originalHistogram"></canvas>
+        </div>
+        <div class="histogram-container">
+          <h4>Гистограмма результата</h4>
+          <canvas id="resultHistogram"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="js/utils.js" type="module"></script>
+    <script src="js/stream-cipher.js" type="module"></script>
+    <script src="js/permutation-cipher.js" type="module"></script>
+    <script src="js/metrics.js" type="module"></script> -->
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
